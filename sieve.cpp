@@ -1,30 +1,38 @@
 #include<bits/stdc++.h>
 using namespace std;
-void slove(int n)
+bool prime[90000001];
+int n=90000000;
+vector<int>v;
+
+void solve()    //finding k-th prime soj problem
 {
-    int prime[n+3];
-    memset(prime,0,sizeof(prime));
+
     for(int i=2;i*i<=n;i++){
 
-        if(prime[i]==0){
+        if(prime[i]==false){
 
             for(int j=i*i;j<=n;j+=i){
 
-                prime[j]=1;
+                prime[j]=true;
             }
         }
 
     }
-    for(int i=2;i<=n;i++){
-        if(prime[i]==0) cout<<i<<" ";
+  for(int i=2;i<=n;i++){
+        if(prime[i]==false)
+        v.push_back(i);
     }
-    cout<<endl;
+
 }
 int main()
 {
-    int n;
-    while(cin>>n)
+    solve();
+    int t;
+     cin>>t;
+    while(t--)
     {
-       slove(n);
+       int q;
+       cin>>q;
+       cout<<v[q-1]<<'\n';
     }
 }
