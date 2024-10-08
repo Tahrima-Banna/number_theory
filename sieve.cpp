@@ -8,7 +8,7 @@ void slove(int n)
 
         if(prime[i]==0){
 
-            for(int j=i*i;j<=n;j+=2){
+            for(int j=i*i;j<=n;j+=i){
 
                 prime[j]=1;
             }
