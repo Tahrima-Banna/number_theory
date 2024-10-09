@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
-
+                                 //binary expoention
 ll power(ll base,ll p)
 {
     ll res=1;
